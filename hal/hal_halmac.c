@@ -2695,7 +2695,9 @@ static int _send_general_info(struct dvobj_priv *d)
 	case HALMAC_RET_NO_DLFW:
 		RTW_WARN("%s: halmac_send_general_info() fail because fw not dl!\n",
 			 __FUNCTION__);
+#if __GNUC__ > 6
 		fallthrough;
+#endif
 	default:
 		return -1;
 	}
