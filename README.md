@@ -1,5 +1,7 @@
 # 8822BU for Linux
 
+Note: I no longer have a device that requires this driver, thus no guarantees that it still works, only that it compiles on my machine.
+
 Driver for 802.11ac USB Adapter with  
 RTL8822BU chipset  
 Only STA/Monitor Mode is supported, no AP.  
