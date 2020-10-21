@@ -1826,10 +1826,7 @@ void mgt_dispatcher(_adapter *padapter, union recv_frame *precv_frame)
 			ptable->func = &OnAuth;
 		else
 			ptable->func = &OnAuthClient;
-
-#if __GNUC__ > 6
-		[[fallthrough]];
-#endif
+		// fallthrough
 
 	case WIFI_ASSOCREQ:
 	case WIFI_REASSOCREQ:
