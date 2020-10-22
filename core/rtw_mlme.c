@@ -1107,7 +1107,6 @@ unlock_scan_queue:
 	return update_ie;
 }
 
-void rtw_add_network(_adapter *adapter, WLAN_BSSID_EX *pnetwork);
 void rtw_add_network(_adapter *adapter, WLAN_BSSID_EX *pnetwork)
 {
 	_irqL irqL;
@@ -1142,7 +1141,6 @@ void rtw_add_network(_adapter *adapter, WLAN_BSSID_EX *pnetwork)
  *			   (3) WMM
  *			   (4) HT
  * (5) others */
-int rtw_is_desired_network(_adapter *adapter, struct wlan_network *pnetwork);
 int rtw_is_desired_network(_adapter *adapter, struct wlan_network *pnetwork)
 {
 	struct security_priv *psecuritypriv = &adapter->securitypriv;
