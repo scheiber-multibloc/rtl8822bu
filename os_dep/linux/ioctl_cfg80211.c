@@ -2600,15 +2600,10 @@ static void _rtw_cfg80211_surveydone_event_callback(_adapter *padapter, struct c
 
 		pnetwork = LIST_CONTAINOR(plist, struct wlan_network, list);
 
-		/* report network only if the current channel set contains the channel to which this network belongs */
 		if (rtw_chset_search_ch(adapter_to_chset(padapter), pnetwork->network.Configuration.DSConfig) >= 0
-			&& rtw_mlme_band_check(padapter, pnetwork->network.Configuration.DSConfig) == _TRUE
-			&& _TRUE == rtw_validate_ssid(&(pnetwork->network.Ssid))
-		) {
-			if (target_wps_scan)
-				rtw_cfg80211_clear_wps_sr_of_non_target_bss(padapter, pnetwork, &target_ssid);
-			rtw_cfg80211_inform_bss(padapter, pnetwork);
-		}
+		    && rtw_mlme_band_check(padapter, pnetwork->network.Configuration.DSConfig) == _TRUE
+		    && _TRUE == rtw_validate_ssid(&(pnetwork->network.Ssid)) && target_wps_scan)
+			rtw_cfg80211_clear_wps_sr_of_non_target_bss(padapter, pnetwork, &target_ssid);
 #if 0
 		/* check ralink testbed RSN IE length */
 		{

@@ -1082,6 +1082,16 @@ bool rtw_update_scanned_network(_adapter *adapter, WLAN_BSSID_EX *target)
 
 		update_network(&(pnetwork->network), target, adapter, update_ie);
 	}
+	/*
+	 * report network only if the current channel set contains the channel
+	 * to which this network belongs. Report early so that we have a valid
+	 * scan timestamp, finish up in scan-done callback.
+	 */
+	if (rtw_chset_search_ch(adapter_to_chset(adapter),
+				pnetwork->network.Configuration.DSConfig) >= 0
+	    && rtw_mlme_band_check(adapter, pnetwork->network.Configuration.DSConfig) == _TRUE
+	    && _TRUE == rtw_validate_ssid(&(pnetwork->network.Ssid)))
+		rtw_cfg80211_inform_bss(adapter, pnetwork);
 
 unlock_scan_queue:
 	_exit_critical_bh(&queue->lock, &irqL);
