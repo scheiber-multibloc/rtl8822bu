@@ -11,7 +11,7 @@ A few known wireless cards that use this driver include
 * [ASUS AC-53 NANO](https://www.asus.com/Networking/USB-AC53-Nano/)
 * [D-Link DWA-182 (Revision D1 only)](http://ca.dlink.com/products/connect/wireless-ac1200-dual-band-usb-adapter/)
 * [tp-link Archer T4U (Revision V3 only)](https://www.tp-link.com/us/home-networking/usb-adapter/archer-t4u/)
-
+* [Linksys WUSB6400M](https://www.linksys.com/us/support-product?pid=01t340000042wpSAAQ)
 
 
 > NOTE: At least v4.7 is needed to compile this module
