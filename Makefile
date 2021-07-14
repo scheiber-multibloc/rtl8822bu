@@ -79,7 +79,7 @@ CONFIG_RTW_IPCAM_APPLICATION = n
 CONFIG_RTW_REPEATER_SON = n
 CONFIG_RTW_WIFI_HAL = y
 ########################## Debug ###########################
-CONFIG_RTW_DEBUG = y
+CONFIG_RTW_DEBUG = n
 # default log level is _DRV_INFO_ = 4,
 # please refer to "How_to_set_driver_debug_log_level.doc" to set the available level.
 CONFIG_RTW_LOG_LEVEL = 0
@@ -97,8 +97,8 @@ CONFIG_RTW_SDIO_PM_KEEP_POWER = y
 ###################### MP HW TX MODE FOR VHT #######################
 CONFIG_MP_VHT_HW_TX_MODE = n
 ###################### Platform Related #######################
-CONFIG_PLATFORM_I386_PC = y
-CONFIG_PLATFORM_ARM_RPI = n
+CONFIG_PLATFORM_I386_PC = n
+CONFIG_PLATFORM_ARM_RPI = y
 CONFIG_PLATFORM_ANDROID_X86 = n
 CONFIG_PLATFORM_ANDROID_INTEL_X86 = n
 CONFIG_PLATFORM_JB_X86 = n
@@ -442,7 +442,7 @@ endif
 EXTRA_CFLAGS += -DCONFIG_RTL8821A
 
 _HAL_INTFS_FILES +=	hal/rtl8812a/hal8821a_fw.o
-		
+
 endif
 
 ifeq ($(CONFIG_BT_COEXIST), y)
